@@ -29,4 +29,9 @@ public class CalculatorTest {
 	public void testSplitByNewline() {
 		assertEquals(6, Calculator.add("1,2\n3"));
 	}
+
+	@Test(expected = IllegalArgumentException.class)
+	public void testNegativeNumbers(){
+		Calculator.add("-1");
+	}
 }
