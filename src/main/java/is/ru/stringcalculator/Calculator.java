@@ -15,25 +15,7 @@ public class Calculator {
 				String numbers[] = text.split(",|\n");
 				if(text.contains("-"))
 				{
-					String message = "Negatives not allowed: ";
-					boolean firstNegative = true;
-					for(String number : numbers)
-					{
-						if(number.contains("-"))
-						{
-							if(firstNegative)
-							{
-								message = message + number;
-								firstNegative = false;
-							}
-							else
-							{
-								message = message + "," + number; 
-							}
-							
-						}
-					}
-					throw new IllegalArgumentException(message);
+					throwExceptionOnNegatives(numbers);
 				}
 
 				return sum(numbers);
@@ -56,5 +38,28 @@ public class Calculator {
 			total += toInt(number);
 		}
 		return total;
+	}
+
+	private static void throwExceptionOnNegatives(String [] numbers)
+	{
+		String message = "Negatives not allowed: ";
+		boolean firstNegative = true;
+		for(String number : numbers)
+		{
+			if(number.contains("-"))
+			{
+				if(firstNegative)
+				{
+					message = message + number;
+					firstNegative = false;
+				}
+				else
+				{
+					message = message + "," + number; 
+				}
+				
+			}
+		}
+		throw new IllegalArgumentException(message);
 	}
 }
