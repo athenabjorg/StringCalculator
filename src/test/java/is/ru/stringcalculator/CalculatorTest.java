@@ -41,4 +41,9 @@ public class CalculatorTest {
 			assertEquals("Negatives not allowed: -1,-2", e.getMessage());
 		}
 	}
+
+	@Test
+	public void testIgnoreLargeNumbers() {
+		assertEquals(2, Calculator.add("1001,2"));
+	}
 }
