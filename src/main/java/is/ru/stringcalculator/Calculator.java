@@ -28,6 +28,7 @@ public class Calculator {
 
 				return sum(numbers);
 			}
+			return 1;
 		}
 		
 	}
