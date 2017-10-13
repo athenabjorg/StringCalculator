@@ -22,8 +22,4 @@
 hs_err_pid*
 
 # build files
-clean
-run_tests
-build
-build_tests
-run
+bin/*
