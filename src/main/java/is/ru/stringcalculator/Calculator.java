@@ -18,7 +18,7 @@ public class Calculator {
 
 				return sum(numbers);
 			}
-			else if(text.contains(",") | text.contains("\n"))
+			else
 			{
 				String numbers[] = text.split(",|\n");
 				if(text.contains("-"))
@@ -28,7 +28,6 @@ public class Calculator {
 
 				return sum(numbers);
 			}
-			return 1;
 		}
 		
 	}
