@@ -9,13 +9,32 @@ public class Calculator {
 		}
 		else
 		{
-			if(text.contains("-"))
-			{
-				throw new IllegalArgumentException("Negatives not allowed.");
-			}
+			
 			if(text.contains(",") | text.contains("\n"))
 			{
 				String numbers[] = text.split(",|\n");
+				if(text.contains("-"))
+				{
+					String message = "Negatives not allowed: ";
+					boolean firstNegative = true;
+					for(String number : numbers)
+					{
+						if(number.contains("-"))
+						{
+							if(firstNegative)
+							{
+								message = message + number;
+								firstNegative = false;
+							}
+							else
+							{
+								message = message + "," + number; 
+							}
+							
+						}
+					}
+					throw new IllegalArgumentException(message);
+				}
 
 				return sum(numbers);
 			}
