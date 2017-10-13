@@ -51,4 +51,16 @@ public class CalculatorTest {
 	public void testSplitOnDifferentDelimiters() {
 		assertEquals(3, Calculator.add("//;\n1;2"));
 	}
+
+	@Test
+	public void testDifferentDelimitersWithNegativeNumbers(){
+		try
+		{
+			Calculator.add("//;\n1;-2");
+		}
+		catch(IllegalArgumentException e)
+		{
+			assertEquals("Negatives not allowed: -2", e.getMessage());
+		}
+	}
 }

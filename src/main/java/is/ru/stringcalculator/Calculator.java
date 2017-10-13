@@ -16,6 +16,11 @@ public class Calculator {
 
 				String numbers[] = input.split(delimiter);
 
+				if(input.contains("-"))
+				{
+					throwExceptionOnNegatives(numbers);
+				}
+
 				return sum(numbers);
 			}
 			else
