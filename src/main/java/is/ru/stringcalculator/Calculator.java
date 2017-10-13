@@ -9,6 +9,11 @@ public class Calculator {
 		}
 		else
 		{
+			if(text.contains(","))
+			{
+				String numbers[] = text.split(",");
+				return Integer.parseInt(numbers[0]) + Integer.parseInt(numbers[1]);
+			}
 			return 1;
 		}
 		
