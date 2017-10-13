@@ -9,8 +9,16 @@ public class Calculator {
 		}
 		else
 		{
-			
-			if(text.contains(",") | text.contains("\n"))
+			if(text.startsWith("//"))
+			{
+				String delimiter = text.substring(2, text.indexOf("\n"));
+				String input = text.substring(text.indexOf("\n") + 1, text.length());
+
+				String numbers[] = input.split(delimiter);
+
+				return sum(numbers);
+			}
+			else if(text.contains(",") | text.contains("\n"))
 			{
 				String numbers[] = text.split(",|\n");
 				if(text.contains("-"))

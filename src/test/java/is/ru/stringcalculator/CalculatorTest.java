@@ -46,4 +46,9 @@ public class CalculatorTest {
 	public void testIgnoreLargeNumbers() {
 		assertEquals(2, Calculator.add("1001,2"));
 	}
+
+	@Test
+	public void testSplitOnDifferentDelimiters() {
+		assertEquals(3, Calculator.add("//;\n1;2"));
+	}
 }
